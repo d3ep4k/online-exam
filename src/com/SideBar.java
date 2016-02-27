@@ -29,11 +29,7 @@ class SideBar extends JPanel {
             add(getLevelRecord(i));
         }
 
-        JButton learnLevelB = new JButton(new ImageIcon((new ImageIcon(ImageUtil.getImage("AllLevelsGButton2.png")).getImage()
-                .getScaledInstance(44, 44, Image.SCALE_SMOOTH))));
-        learnLevelB.setBorderPainted(false);
-        learnLevelB.setFocusPainted(false);
-        learnLevelB.setContentAreaFilled(false);
+        JButton learnLevelB = new ControlPanelButton("AllLevelsGButton2.png",70,70);
         JPanel panel = new JPanel();
         panel.add(learnLevelB);
         add(panel);
@@ -47,7 +43,6 @@ class SideBar extends JPanel {
         JLabel levelL = new JMyLabel(new ImageIcon(((new ImageIcon(ImageUtil.getImage("cardbox2.png")).getImage()
                 .getScaledInstance(60, 40, Image.SCALE_SMOOTH)))));
         levelL.setPreferredSize(new Dimension(40, 40));
-        levelL.setText("0");
         panel.add(levelL);
         JButton learnLevelB = new JButton(new ImageIcon(((new ImageIcon(ImageUtil.getImage("AllLevelsBButton2.png")).getImage()
                 .getScaledInstance(44, 44, Image.SCALE_SMOOTH)))));

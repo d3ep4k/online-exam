@@ -5,15 +5,10 @@
  */
 package com;
 
-import com.util.ImageUtil;
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.GridLayout;
-import java.awt.Image;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -58,15 +53,4 @@ class ControlPanel extends JPanel {
     }
 }
 
-class ControlPanelButton extends JButton {
 
-    public ControlPanelButton(String imageFile) {
-        super(new ImageIcon(((new ImageIcon(ImageUtil.getImage(imageFile)).getImage()
-                .getScaledInstance(35, 30, Image.SCALE_SMOOTH)))));
-        setBorder(new EmptyBorder(2, 5, 2, 0));
-        setContentAreaFilled(false);
-        setBorderPainted(false);
-        setFocusPainted(false);
-    }
-
-}
