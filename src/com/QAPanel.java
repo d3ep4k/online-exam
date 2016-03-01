@@ -5,18 +5,12 @@
  */
 package com;
 
-import com.util.ImageUtil;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.Image;
 import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
@@ -58,21 +52,5 @@ class ContentPanel extends JPanel {
 
 }
 
-class QuestionSideMenu extends JPanel {
 
-    public QuestionSideMenu() {
-        super();
-        setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        setPreferredSize(new Dimension(160, 1000));
-//        setBackground(new Color(0xafcaff));
-        setBackground(new Color(0xffffff));
-        setLayout(new GridLayout(3, 1, 5, 5));
-
-        JPanel panel = new JPanel();
-        panel.setPreferredSize(new Dimension(60, 60));
-        panel.setBorder(new DashedBorder());
-        panel.setOpaque(false);
-        add(panel);
-    }
-}
 

@@ -41,7 +41,7 @@ public class OnlineExam extends JFrame {
         bottomPanel = new JPanel();
         bottomPanel.setLayout(new BorderLayout());
         JPanel timingCtrlPanel = new TimingControlPanel();
-        timingCtrlPanel.setPreferredSize(new Dimension(220, 200));
+        timingCtrlPanel.setPreferredSize(new Dimension(210, 200));
         bottomPanel.add(timingCtrlPanel, BorderLayout.WEST);
         bottomPanel.add(new BottomControlPanel(), BorderLayout.CENTER);
         bottomPanel.setPreferredSize(new Dimension(contentPane.getWidth(), 120));
