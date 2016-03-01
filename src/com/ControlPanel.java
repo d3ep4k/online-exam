@@ -6,6 +6,7 @@
 package com;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -30,9 +31,10 @@ class ControlPanel extends JPanel {
         b7 = new ControlPanelButton("ImageSnapshotButton2.png");
         b8 = new ControlPanelButton("ImageUploadButton2.png");
         b9 = new ControlPanelButton("DeleteButton2.png");
-
+        setBackground(new Color(0xffffff));
         this.setLayout(new BorderLayout());
         JPanel leftSide = new JPanel();
+        leftSide.setOpaque(false);
 //        leftSide.setLayout(new GridLayout());
         leftSide.add(b1);
         leftSide.add(b2);
@@ -44,6 +46,7 @@ class ControlPanel extends JPanel {
         this.add(leftSide, BorderLayout.WEST);
 
         JPanel rightSide = new JPanel();
+        rightSide.setOpaque(false);
         leftSide.setLayout(new GridLayout());
         rightSide.add(b7);
         rightSide.add(b8);

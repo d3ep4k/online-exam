@@ -44,9 +44,11 @@ public class OnlineExam extends JFrame {
         bottomPanel.add(new BottomControlPanel(), BorderLayout.CENTER);
         bottomPanel.setPreferredSize(new Dimension(contentPane.getWidth(), 120));
         contentPane.add(bottomPanel, BorderLayout.SOUTH);
-        setVisible(true);
-        setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Dimension minSize = new Dimension(800, 600);
+        setSize(minSize);
+        setMaximumSize(minSize);
+        setVisible(true);
     }
 
 }
