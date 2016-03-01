@@ -6,12 +6,17 @@
 package com;
 
 import com.util.ImageUtil;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -27,28 +32,26 @@ import javax.swing.border.EmptyBorder;
 class SideBar extends JPanel {
 
     public SideBar() {
-        setBorder(new EmptyBorder(10, 10, 10, 10));
-        setLayout(new GridLayout(8,1,0,0));
+        setBorder(new EmptyBorder(5, 5, 5, 5));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         JPanel examDescPanel = new JPanel();
-        examDescPanel.setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5,0,5,0);
-        gbc.gridx = gbc.gridy = 0;
-        examDescPanel.add(new JLabel("FILE:", JLabel.LEFT), gbc);
-        gbc.gridx = 1; gbc.gridy = 0;
-        examDescPanel.add(new JLabel("EXAMPLE FILE", JLabel.LEFT), gbc);
-        gbc.gridx = 0; gbc.gridy = 1;
-        examDescPanel.add(new JLabel("CARD:", JLabel.LEFT), gbc);
-        gbc.gridx = 1; gbc.gridy = 1;
-        examDescPanel.add(new JTextField(2), gbc);
-        
-        gbc.gridx = 2; gbc.gridy = 1;
-        examDescPanel.add(new JLabel("LEVEL: ", JLabel.LEFT), gbc);
-        
-        gbc.gridx = 3; gbc.gridy = 1;
-        examDescPanel.add(new JLabel("0", JLabel.CENTER), gbc);
-        
+        examDescPanel.setPreferredSize(new Dimension(100, 40));
+        examDescPanel.setLayout(new GridLayout(2, 1));
+//        examDescPanel.setBackground(Color.red);
+        JPanel examDescPanelTop = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        examDescPanelTop.add(new DescLabel("FILE:  ", Font.BOLD));
+        examDescPanelTop.add(new DescLabel("EXAMPLE FILE", Font.PLAIN));
+        examDescPanel.add(examDescPanelTop, BorderLayout.NORTH);
+        JPanel examDescPanelBottom = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        examDescPanelBottom.add(new DescLabel("CARD:", Font.BOLD));
+        JTextField cardField = new JTextField(2);
+        cardField.setFont(new Font("SansSerif", Font.PLAIN, 9));
+        examDescPanelBottom.add(cardField);
+        examDescPanelBottom.add(new DescLabel("LEVEL: ", Font.BOLD));
+        examDescPanelBottom.add(new DescLabel("0", Font.PLAIN));
+        examDescPanel.add(examDescPanelBottom, BorderLayout.SOUTH);
+
         add(examDescPanel);
 
         for (int i = 0; i < 6; i++) {
@@ -63,17 +66,25 @@ class SideBar extends JPanel {
 
     private JPanel getLevelRecord(int i) {
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(1, 3, 5, 5));
+        panel.setLayout(new GridLayout(1, 3, 1, 1));
         JLabel level = new JLabel("Level " + (5 - i));
         panel.add(level);
         JLabel levelL = new JMyLabel(new ImageIcon(((new ImageIcon(ImageUtil.getImage("cardbox2.png")).getImage()
                 .getScaledInstance(50, 40, Image.SCALE_SMOOTH)))));
         levelL.setPreferredSize(new Dimension(30, 30));
         panel.add(levelL);
-        JButton learnLevelB = new ControlPanelButton("AllLevelsBButton2.png", 44, 44);
+        JButton learnLevelB = new ControlPanelButton("AllLevelsBButton2.png", 40, 40);
         learnLevelB.setPreferredSize(new Dimension(30, 30));
         panel.add(learnLevelB);
         return panel;
+    }
+}
+
+class DescLabel extends JLabel {
+
+    public DescLabel(String text, int style) {
+        super(text, JLabel.LEFT);
+        setFont(new Font("SansSerif", style, 11));
     }
 
 }
