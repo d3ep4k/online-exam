@@ -7,6 +7,7 @@ package com;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -35,17 +36,18 @@ class ControlPanel extends JPanel {
         this.setLayout(new BorderLayout());
         JPanel leftSide = new JPanel();
         leftSide.setOpaque(false);
-//        leftSide.setLayout(new GridLayout());
+        leftSide.setLayout(new GridLayout());
         leftSide.add(b1);
         leftSide.add(b2);
         leftSide.add(b3);
         leftSide.add(b4);
         leftSide.add(b5);
         leftSide.add(b6);
-
+//        leftSide.setPreferredSize(new Dimension(100,20));
         this.add(leftSide, BorderLayout.WEST);
 
         JPanel rightSide = new JPanel();
+//        rightSide.setPreferredSize(new Dimension(100,20));
         rightSide.setOpaque(false);
         leftSide.setLayout(new GridLayout());
         rightSide.add(b7);

@@ -23,8 +23,8 @@ class BottomControlPanel extends JPanel {
         setBorder(new EmptyBorder(5, 5, 5, 5));
         JPanel answerButtonPanel = new JPanel();
         answerButtonPanel.add(new ControlPanelButton("RightAnswerButton2.png", 25, 25));
-        answerButtonPanel.add(new ControlPanelButton("WrongAnswerButton2.png", 25, 25));
-//        playControlPanel.add(new ControlPanelButton("StopButton2.png"));
+        answerButtonPanel.add(new ControlPanelButton("WrongAnswerButton2.png", 20, 20));
+        answerButtonPanel.add(new ControlPanelButton("StopButton2.png",30,30));
 
         add(answerButtonPanel, BorderLayout.WEST);
 

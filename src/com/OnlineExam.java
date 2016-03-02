@@ -36,7 +36,6 @@ public class OnlineExam extends JFrame {
         centerPanel.setBackground(new Color(0xeeeeee));
         //centerPanel.add(new QAPanel());
         contentPane.add(centerPanel, BorderLayout.CENTER);
-        
 
         bottomPanel = new JPanel();
         bottomPanel.setLayout(new BorderLayout());
@@ -48,8 +47,8 @@ public class OnlineExam extends JFrame {
         contentPane.add(bottomPanel, BorderLayout.SOUTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension minSize = new Dimension(800, 600);
-        setSize(minSize);
-        setMaximumSize(minSize);
+        setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
+        setMinimumSize(minSize);
         setVisible(true);
     }
 
