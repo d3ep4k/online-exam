@@ -34,7 +34,7 @@ class BottomControlPanel extends JPanel {
 
         add(saveButtonPanel, BorderLayout.EAST);
         
-        JPanel lowerPanel = new JPanel(new GridLayout());
+        JPanel lowerPanel = new JPanel(new BorderLayout());
         JPanel navigationButtonPanel = new JPanel();
         navigationButtonPanel.add(new ControlPanelButton("BeginningButton2.png", 40, 40));
         navigationButtonPanel.add(new ControlPanelButton("RewindButton2.png", 40, 40));

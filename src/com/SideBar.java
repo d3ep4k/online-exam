@@ -55,6 +55,7 @@ class SideBar extends JPanel {
 
         JButton learnLevelB = new ControlPanelButton("AllLevelsGButton2.png", 70, 70);
         JPanel panel = new JPanel();
+        panel.setBorder(new EmptyBorder(0, 0, 0, 15));
         panel.add(learnLevelB);
         add(panel);
     }
