@@ -18,9 +18,7 @@ import javax.swing.border.EmptyBorder;
 class ControlPanelButton extends JButton {
 
     public ControlPanelButton(String imageFile) {
-        setIcon(new ImageIcon(((new ImageIcon(ImageUtil.getImage(imageFile)).getImage()
-                .getScaledInstance(30, 30, Image.SCALE_SMOOTH)))));
-        setProps();
+        this(imageFile, 30,30);
     }
 
     public ControlPanelButton(String imageFile, int width, int height) {
@@ -31,7 +29,7 @@ class ControlPanelButton extends JButton {
     }
 
     private void setProps() {
-        setBorder(new EmptyBorder(2, 5, 2, 0));
+        setBorder(new EmptyBorder(2, 5, 2, 5));
         setContentAreaFilled(false);
         setBorderPainted(false);
         setFocusPainted(false);

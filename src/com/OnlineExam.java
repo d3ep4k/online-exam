@@ -9,8 +9,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -28,15 +30,21 @@ public class OnlineExam extends JFrame {
         contentPane.setLayout(new BorderLayout());
 
         this.leftPanel = new SideBar();
-//        leftPanel.setBackground(new Color(0xfcfaaa));
         leftPanel.setPreferredSize(new Dimension(200, contentPane.getHeight()));
         contentPane.add(leftPanel, BorderLayout.WEST);
 
-        centerPanel = new QAPanel();
+        centerPanel = new JPanel();
         centerPanel.setBackground(new Color(0xeeeeee));
-        //centerPanel.add(new QAPanel());
+        centerPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        centerPanel.setLayout(new GridLayout(2, 1, 0, 10));
+        JPanel questionPanel = new ContentPanel(new QuestionDetail(), new ControlPanel(), new QuestionSideMenu());
+        centerPanel.add(questionPanel);
+        JPanel answerPanel = new ContentPanel(new AnswerDetail(), new ControlPanel(), new AnswerSideMenu());
+        centerPanel.add(answerPanel);
+
         contentPane.add(centerPanel, BorderLayout.CENTER);
 
+        //bottom panel
         bottomPanel = new JPanel();
         bottomPanel.setLayout(new BorderLayout());
         JPanel timingCtrlPanel = new TimingControlPanel();
@@ -45,6 +53,8 @@ public class OnlineExam extends JFrame {
         bottomPanel.add(new BottomControlPanel(), BorderLayout.CENTER);
         bottomPanel.setPreferredSize(new Dimension(contentPane.getWidth(), 120));
         contentPane.add(bottomPanel, BorderLayout.SOUTH);
+
+        //frame props
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension minSize = new Dimension(800, 600);
         setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);

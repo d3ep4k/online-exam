@@ -6,7 +6,6 @@
 package com;
 
 import java.awt.Color;
-import java.awt.Component;
 import static java.awt.Component.TOP_ALIGNMENT;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
