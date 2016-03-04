@@ -32,6 +32,7 @@ class QuestionSideMenu extends JPanel {
         inputPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         inputPanel.add(new JTextField(2));
         inputPanel.add(new ControlPanelButton("HelpButton2.png", 18, 18));
+        inputPanel.setOpaque(false);
         add(inputPanel);
         
         JPanel panel = new JPanel();

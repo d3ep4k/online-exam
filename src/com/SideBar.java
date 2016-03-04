@@ -65,11 +65,11 @@ class SideBar extends JPanel {
         panel.setLayout(new GridLayout(1, 3, 1, 1));
         JLabel level = new JLabel("Level " + (5 - i));
         panel.add(level);
-        JLabel levelL = new JMyLabel(new ImageIcon(((new ImageIcon(ImageUtil.getImage("cardbox2.png")).getImage()
-                .getScaledInstance(50, 40, Image.SCALE_SMOOTH)))));
-        levelL.setPreferredSize(new Dimension(30, 30));
+        JLabel levelL = new JMyLabel(new StretchIcon(((new ImageIcon(ImageUtil.getImage("cardbox2.png")).getImage()
+                .getScaledInstance(40, 40, Image.SCALE_SMOOTH)))));
+//        levelL.setPreferredSize(new Dimension(30, 30));
         panel.add(levelL);
-        JButton learnLevelB = new ControlPanelButton("AllLevelsBButton2.png", 40, 40);
+        JButton learnLevelB = new ControlPanelButton("AllLevelsBButton2.png", 44, 44);
         learnLevelB.setPreferredSize(new Dimension(30, 30));
         panel.add(learnLevelB);
         return panel;

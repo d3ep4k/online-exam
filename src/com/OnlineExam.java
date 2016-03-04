@@ -30,7 +30,8 @@ public class OnlineExam extends JFrame {
         contentPane.setLayout(new BorderLayout());
 
         this.leftPanel = new SideBar();
-        leftPanel.setPreferredSize(new Dimension(200, contentPane.getHeight()));
+//        leftPanel.setMinimumSize(new Dimension(300, 0));
+        leftPanel.setPreferredSize(new Dimension(220, 0));
         contentPane.add(leftPanel, BorderLayout.WEST);
 
         centerPanel = new JPanel();
@@ -59,6 +60,7 @@ public class OnlineExam extends JFrame {
         Dimension minSize = new Dimension(800, 600);
         setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
         setMinimumSize(minSize);
+//        pack();
         setVisible(true);
     }
 

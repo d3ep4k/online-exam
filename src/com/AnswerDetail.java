@@ -5,7 +5,6 @@
  */
 package com;
 
-import com.sun.imageio.plugins.jpeg.JPEG;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -23,13 +22,14 @@ import javax.swing.JPanel;
 public class AnswerDetail extends JPanel {
 
     public AnswerDetail() {
-        setLayout(new GridLayout(4, 1, 0, 5));
+        setLayout(new GridLayout(5, 1, 0, 5));
         setOpaque(false);
         setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         add(new AnswerRow("Answer 1", true));
         add(new AnswerRow("Answer 2"));
         add(new AnswerRow("Answer 3"));
         add(new AnswerRow("Answer 4"));
+        add(new AnswerRow("Answer 5"));
     }
 
     //inner class
@@ -40,11 +40,11 @@ public class AnswerDetail extends JPanel {
             setLayout(new BorderLayout(5, 5));
             JPanel answerButtonPanel = new JPanel();
             setBorder(BorderFactory.createLineBorder(Color.GRAY, 2, true));
-            answerButtonPanel.setPreferredSize(new Dimension(100, 0));
+            answerButtonPanel.setPreferredSize(new Dimension(60, 0));
             answerButtonPanel.setLayout(new BorderLayout());
             answerButtonPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 2, Color.GRAY));
             if (check) {
-                JButton answerButton = new ControlPanelButton("RightAnswerButton2.png", 35, 35);
+                JButton answerButton = new ControlPanelButton("RightAnswerButton2.png",28,28);
                 answerButtonPanel.add(answerButton);
             }
             add(answerButtonPanel, BorderLayout.WEST);

@@ -18,13 +18,16 @@ import javax.swing.border.EmptyBorder;
 class ControlPanelButton extends JButton {
 
     public ControlPanelButton(String imageFile) {
-        this(imageFile, 30,30);
+        this(imageFile, 30, 30);
     }
 
     public ControlPanelButton(String imageFile, int width, int height) {
-        super(new ImageIcon(((new ImageIcon(ImageUtil.getImage(imageFile)).getImage()
-                .getScaledInstance(width, height, Image.SCALE_SMOOTH)))));
-//        super(new StretchIcon(ImageUtil.getImage(imageFile).getScaledInstance(100, 100, Image.SCALE_SMOOTH)));
+//        super(new ImageIcon(((new ImageIcon(ImageUtil.getImage(imageFile)).getImage()
+//                .getScaledInstance(width, height, Image.SCALE_SMOOTH)))));
+        Image img = ImageUtil.getImage(imageFile)
+                .getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        this.setIcon(new ImageIcon(img));
+//        this.setIcon(new StretchIcon(img));
         setProps();
     }
 
